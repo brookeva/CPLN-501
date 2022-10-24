@@ -5,8 +5,8 @@ rm(list=ls())
 f
 #CREATING DATA####
 #make up some data
-year <- c(1950, 1960, 1970, 1980, 1990, 2000, 2010)
-population <- c(15, 29, 77, 234, 366, 496, 631)  
+year <- c(1970, 1980, 1990, 2000, 2010)
+population <- c(1948609, 1688210, 1585577, 1517550, 1526006)  
 dat <- cbind.data.frame(year, population)
 #for your assignment, you need to collect data for Philly's population between 1950 and 2010
 #and plug them into the commands above
