@@ -70,11 +70,11 @@ summary(mod.3)
 
 #TASK: plot the points on base plot
 plot(dat$year, dat$population) #base plot
-points(dat$year[dat$year>1950],predict(mod.3),
+points(dat$year[dat$year>1970],predict(mod.3),
        col="red", pch="@") #make sure x an dy axes have the same length
 
 #TASK: plot the line that connects the predicted values
-lines(dat$year[dat$year>1950], predict(mod.3)) #make sure x an dy axes have the same length 
+lines(dat$year[dat$year>1970], predict(mod.3)) #make sure x an dy axes have the same length 
 
 #TASK: predict population of 2020 and 2030
 #hint: mod.3$coefficients PICK UP HERE
