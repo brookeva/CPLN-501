@@ -2,7 +2,7 @@
 #REGRESSION IN POPULATION TREND#
 #TIPS FOR ASSIGNMENT 2#
 rm(list=ls())
-
+f
 #CREATING DATA####
 #make up some data
 year <- c(1950, 1960, 1970, 1980, 1990, 2000, 2010)
