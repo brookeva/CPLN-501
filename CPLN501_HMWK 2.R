@@ -78,22 +78,24 @@ lines(dat$year[dat$year>1970], predict(mod.3)) #make sure x an dy axes have the 
 
 #TASK: predict population of 2020 and 2030
 #hint: mod.3$coefficients PICK UP HERE
-pop2020 <- 
-pop2030 <- 
+mod.3$coefficients[1]
+pop2020 <- mod.3$coefficients[1] + 2020*mod.3$coefficients[2] + 1526006*mod.3$coefficients[3] #population = intercept + year(and its coefficient) + the lag (and its coefficient)
+pop2030 <- mod.3$coefficients[1] + 2030*mod.3$coefficients[2] + pop2020*mod.3$coefficients[3]
 
+  #look at canvas uploaded code - it's updated 
+  
 #TASK: store predicted population in a new column in futurepop
 pred_lag <- c(pop2020, pop2030)
 futurepop <- cbind.data.frame(futurepop, pred_lag)
 
 #based on your judgment, which model will likely predict the best?
 #TASK (OPTIONAL): plot all three trends on same plot
-plot(dat$, dat$,
-     main = "", 
-     xlab = "", ylab = "", 
-     col = "", pch = )
-abline()
-lines()
-lines()
-legend(1950, 600, 
-       legend=c(),
-       col=c(), lty = 1)
+par(mfrow=c(1,1))
+plot(dat$year, dat$population)
+
+abline(mod.1, col = "red")
+abline(mod.2)
+abline(mod.3, col = "blue")
+legend(1970, 1600000, 
+       legend=c("Linear Trend", "Quadratic Trend", "Linear Trend with Lag"),
+       col=c("black", "blue", "red"), lty = 1)
